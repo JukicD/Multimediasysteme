@@ -109,5 +109,25 @@ public class TreeNode implements Comparable<TreeNode> {
 			right.printSubTree(tabs + 1);
 		}
 	}
+
+	public void setLeft(TreeNode left) {
+		this.left = left;
+	}
+
+	public void setRight(TreeNode right) {
+		this.right = right;
+	}
+
+	public int getFrequency() {
+		return frequency;
+	}
+
+	public void setFrequency(int frequency) {
+		this.frequency = frequency;
+	}
+	
+	
+	
+	
 	
 }

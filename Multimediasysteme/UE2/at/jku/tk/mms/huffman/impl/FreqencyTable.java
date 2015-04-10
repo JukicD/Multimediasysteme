@@ -28,7 +28,15 @@ public class FreqencyTable {
 	/** Add a value to this Table */
 	public void add(byte v) {
 		sortedNodes = null;
-/* 		@TODO Place your implementation here		 */
+/* 		@TODO Place your implementation here*/
+		
+		if(table.containsKey(v))
+		{
+			table.get(v).incFrequency();
+		}else
+		{
+			table.put(v, new TreeNode(v, 1, null, null));
+		}
 	}
 	
 	/** Sorts table and returns */

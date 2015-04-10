@@ -1,6 +1,5 @@
 package at.jku.tk.mms.huffman.impl;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,7 +31,44 @@ public class HuffmanTree {
 	/** Initialize the huffman tree */
 	private void initializeTree(List<TreeNode> tree) {
 /* 		@TODO Place your implementation here		 */
-		root = tree.get(0);
+		root = new TreeNode((byte)63);
+		
+		TreeNode first = tree.get(0);
+		TreeNode second = tree.get(1);
+		
+		if(first.getValue() <= second.getValue())
+		{
+			root.setLeft(first);
+			root.setRight(second);
+		
+		}else
+		{
+			root.setLeft(second);
+			root.setRight(first);
+		}
+		root.setFrequency(root.getLeft().getFreq() + root.getRight().getFreq());
+		
+		for(TreeNode node : tree)
+		{
+			TreeNode dummy = new TreeNode(root.getValue());
+			if(root.getFreq() <= node.getFreq())
+			{
+				dummy.setLeft(root);
+				dummy.setRight(node);
+				
+			}else
+			{
+				dummy.setRight(root);
+				dummy.setLeft(node);
+			}
+			
+			if(!dummy.isLeaf())
+			{
+				dummy.setFrequency(dummy.getLeft().getFreq() + dummy.getRight().getFrequency());
+			}
+			
+			dummy = root;
+		}
 	}
 
 	/** Iterate over tree and init lookup */

@@ -15,7 +15,7 @@ import at.jku.tk.mms.huffman.impl.TreeNode;
  */
 public class HuffmanCompressionTest {
 	
-	public static final String TEST_INPUT = "Two goldfish are in a tank. One says to the other, \"Do you know how to drive this thing?\"";
+	public static final String TEST_INPUT = "abracadabra"; //"Two goldfish are in a tank. One says to the other, \"Do you know how to drive this thing?\"";
 	public static final byte[] COMPRESSED_INPUT = new byte[] { -7, 116, 116, -65, 115, -10, 55, 70, -84, -28, 73, -93, 53, 61, -80, 123, -105, 55, -81, 54, 98, 50, -100, 89, 79, 111, -25, 30, -111, -30, 100, -18, 85, -54, 87, 49, 28, -38, 26, 115, 42, 54, 101, 68, -12, -33, 0 };
 	public static final String TEST_INPUT_SHORT = "MMS";
 	public static final byte[] COMPRESSED_SHORT = new byte[] { -64 };

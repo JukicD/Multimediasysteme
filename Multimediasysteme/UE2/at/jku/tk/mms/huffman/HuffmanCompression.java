@@ -36,7 +36,7 @@ public class HuffmanCompression {
 	
 	/** Encode with huffman lookup table */
 	public byte[] compress(byte[] data) {
-/* 		@TODO Place your implementation here		 */
+		
 	}
 	
 	/** Decode with huffman lookup table */

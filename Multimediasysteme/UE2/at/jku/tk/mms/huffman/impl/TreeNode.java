@@ -16,6 +16,13 @@ public class TreeNode implements Comparable<TreeNode> {
 	
 	private TreeNode left, right;
 	
+	public TreeNode(TreeNode left, TreeNode right)
+	{
+		this.left = left;
+		this.right = right;
+		this.frequency = left.getFreq() + right.getFreq();
+	}
+	
 	/** Creates new TreeNode .. must get initialized with value */
 	public TreeNode(byte value) {
 		this(value, 0, null, null);
